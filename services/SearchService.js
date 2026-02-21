@@ -1,13 +1,12 @@
 const BrowserService = require('./BrowserService');
 
-const BASE_URL = process.env.BASE_URL;
-
 class SearchService {
 
     static buildUrl(checkin, checkout) {
+        const base = process.env.BASE_URL;
         const entrada = encodeURIComponent(checkin); // encode evita problemas com caracteres especiais e datas
         const saida = encodeURIComponent(checkout);
-        return `${BASE_URL}?entrada=${entrada}&saida=${saida}&adultos=1#acomodacoes`;
+        return `${base}?entrada=${entrada}&saida=${saida}&adultos=1#acomodacoes`;
     }
 
     static async search(checkin, checkout) {
