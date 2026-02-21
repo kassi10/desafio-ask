@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-class BrowserService {
+class BrowserService { // abre e fecha o navegador
 
     static getBrowser() {
         return puppeteer.launch({});
